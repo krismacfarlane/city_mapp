@@ -1,0 +1,14 @@
+<h1>Create a City Mapp account</h1>
+
+<%= form_for(@user) do |s|%>
+
+  <%= s.label :name%>
+  <%= s.text_field :name%><br>
+  <%= s.label :email%>
+  <%= s.text_field :email%><br>
+  <%= s.label :password%>
+  <%= s.password_field :password%><br>
+  <%= s.label :password_confirmation%>
+  <%= s.password_field :password_confirmation%><br>
+  <%= s.submit%>
+<% end %>

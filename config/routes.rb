@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   root 'home#index'
 
 # SESSIONS ROUTES
-  get    '/login/:title', to: 'sessions#new',     as: :new_login
-  post   '/login/:title', to: 'sessions#create',  as: :login
+  get    '/login', to: 'sessions#new',     as: :new_login
+  post   '/login', to: 'sessions#create',  as: :login
   delete '/logout',       to: 'sessions#destroy', as: :logout
 
 # RESOURCE ROUTES
