@@ -11,7 +11,9 @@ Rails.application.routes.draw do
 # RESOURCE ROUTES
   resources :users
   resources :cities
-  resources :maps
-  resources :markers
+  resources :maps do
+    resources :markers
+  end
+
 
 end

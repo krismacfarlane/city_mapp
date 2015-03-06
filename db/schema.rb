@@ -25,14 +25,6 @@ ActiveRecord::Schema.define(version: 20150305213310) do
     t.datetime "updated_at"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string   "name",            null: false
-    t.string   "email",           null: false
-    t.string   "password_digest"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "maps", force: :cascade do |t|
     t.string   "title",      null: false
     t.integer  "user_id"
@@ -42,10 +34,18 @@ ActiveRecord::Schema.define(version: 20150305213310) do
   end
 
   create_table "markers", force: :cascade do |t|
-    t.integer  "lat",           null: false
-    t.integer  "long",          null: false
+    t.float    "lat",           null: false
+    t.float    "long",          null: false
     t.string   "popup_content"
     t.integer  "map_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name",            null: false
+    t.string   "email",           null: false
+    t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
