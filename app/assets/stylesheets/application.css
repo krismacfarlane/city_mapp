@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+   body { margin:20; padding:20; }
+   #map{ width: 900px; height: 500px; }
+   #pop-up-side { position: fixed; top: 10px; left: 1000px; margin: 30px; }
+   .hidden { display: none; }
