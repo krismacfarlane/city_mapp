@@ -1,3 +1,9 @@
 <h1>Maps of <%= @city %></h1>
 
+<ol id="map-list">
+<% @maps.each do |map| %>
+  <li><a href="/cities/<%= map.city_id %>/maps/<%= map.id %>"><%= map.title %></a></li>
+<% end %>
+</ol>
+
 <%= button_to "Create a new map", new_city_map_path, method: "get" %>
