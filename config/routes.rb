@@ -10,9 +10,10 @@ Rails.application.routes.draw do
 
 # RESOURCE ROUTES
   resources :users
-  resources :cities
-  resources :maps do
-    resources :markers
+  resources :cities do
+    resources :maps do
+      resources :markers
+    end
   end
 
 

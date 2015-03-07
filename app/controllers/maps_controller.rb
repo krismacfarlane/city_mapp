@@ -1,7 +1,8 @@
 class MapsController < ApplicationController
 
   def index
-    @maps = Map.all
+    @maps = Map.where(city_id: params[:city_id])
+    @city = @maps.first.city.name
   end
 
   def new

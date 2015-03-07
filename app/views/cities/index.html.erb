@@ -1,0 +1,15 @@
+<h1>Which city do you want to check out?</h1>
+
+<div class="cities-container">
+<% @cities.each do |city| %>
+  <div class="ind-city-container">
+    <h3><a href="cities/<%= city.id %>/maps"><%= city.name %></a></h3>
+    <ul>
+      <li>State: <%=city.state %></li>
+      <li>Population: <%=city.population %></li>
+      <li><a href="http://<%=city.website%>">NYC Official Website</a></li>
+    </ul>
+  </div>
+<% end %>
+</div>
+
