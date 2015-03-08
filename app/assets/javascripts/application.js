@@ -73,13 +73,12 @@ $(document).ready(function() {
         e.preventDefault();
         var popupContent = $("#popup-box").val();
         layer.bindPopup(popupContent);
+        $('#popup').addClass('hidden');
         debugger
         $.ajax({
           type: "POST",
           url: "/cities/1/maps/" + mapId + "/markers",
           data: {lat: featureGroup.getBounds(layer)._southWest.lat, long: featureGroup.getBounds(layer)._southWest.lng, popup_content: popupContent}
-        }).done(function(data){
-          $('#popup').addClass('hidden');
         });
       });
     }

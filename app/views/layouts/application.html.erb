@@ -13,12 +13,22 @@
 </head>
 <body>
 <header>
-<span class="app_name" style="color: b8ed9f;">City</span><span class="app_name" style="color: d94869;">Mapps</span>
+<span class="app_name" style="color: #b8ed9f;">City</span><span class="app_name" style="color: #d94869;">Mapps</span>
 </header>
+<div id="wrapper">
+<div id="content_wrapper">
+<div id="content_inner_wrapper">
 <%= yield %>
+</div>
+</div>
+</div>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-<footer>
-<%= link_to image_tag("cm_logo.jpg", :class => :footer_logo), "https://github.com/krismacfarlane/city_mapp"%>
-</footer>
+<div id="footer_wrapper">
+<div id="footer_inner_wrapper">
+<div><%= link_to image_tag("cm_logo.jpg", :class => :footer_logo), "https://github.com/krismacfarlane/city_mapp"%>
+</div>
+</div>
+</div>
+
 </body>
 </html>
