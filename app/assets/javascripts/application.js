@@ -15,10 +15,33 @@
 //= require turbolinks
 //= require_tree .
 
+
+
 $(document).ready(function() {
   var map = $("#map");
   var mapId = map.attr("rid");
-  var cityId =
+  var cityId;
+
+  var spanToggle = function(e) {
+    $(e.target).addClass("hidden");
+    $("input.input-title").removeClass("hidden");
+    var spanText = $(e.target).text();
+    $("input.input-title").val(spanText);
+  }
+
+  var addTitle = function(e) {
+    if (e.keyCode == 13) {
+      $("input.input-title").addClass("hidden");
+      $("span.map-title").removeClass("hidden");
+      var textInput = $("input.input-title").val();
+      debugger
+      $("span.map-title").text(textInput);
+    }
+  }
+
+  $("span.map-title").on("click", spanToggle);
+
+  $("input.input-name").on("keypress", addTitle);
 
   L.mapbox.accessToken = 'pk.eyJ1Ijoia3Jpc21hY2ZhcmxhbmUiLCJhIjoiN3lkS25jcyJ9.6chNwLDVAAfQacy0JKvNxQ';
   var map = L.mapbox.map('map', 'examples.map-i86nkdio')
@@ -55,7 +78,7 @@ $(document).ready(function() {
           type: "POST",
           url: "cities/1/maps/" + mapId + "/markers",
           data: {lat: featureGroup.getBounds(layer)._southWest.lat, long: featureGroup.getBounds(layer)._southWest.lng, popup_content: popupContent}
-        })
+        });
       });
     }
 

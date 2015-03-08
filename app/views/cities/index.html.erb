@@ -3,7 +3,7 @@
 <div class="cities-container">
 <% @cities.each do |city| %>
   <div class="ind-city-container">
-    <h3><a href="cities/<%= city.id %>/maps"><%= city.name %></a></h3>
+    <h3><a href="/cities/<%= city.id %>/maps"><%= city.name %></a></h3>
     <ul>
       <li>State: <%=city.state %></li>
       <li>Population: <%=city.population %></li>
