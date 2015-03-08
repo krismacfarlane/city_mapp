@@ -18,3 +18,23 @@
    #map{ width: 900px; height: 500px; }
    #pop-up-side { position: fixed; top: 10px; left: 1000px; margin: 30px; }
    .hidden { display: none; }
+
+   header {
+    background-color: 242942;
+   }
+
+   header.app_name {
+    font-size: 48px;
+   }
+
+   body {
+    background-color: 242942;
+    color: white;
+    font-family: 'Economica', sans-serif;
+   }
+
+   footer {
+    background-color: white;
+   }
+
+   .footer_logo { float: left;}

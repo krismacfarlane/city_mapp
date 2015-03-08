@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CityMapp</title>
+  <title>CityMapps</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-
+  <link href='http://fonts.googleapis.com/css?family=Economica' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
   <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.js'></script>
@@ -12,8 +12,13 @@
 <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-draw/v0.2.2/leaflet.draw.js'></script>
 </head>
 <body>
-
+<header>
+<span class="app_name" style="color: b8ed9f;">City</span><span class="app_name" style="color: d94869;">Mapps</span>
+</header>
 <%= yield %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<footer>
+<%= link_to image_tag("cm_logo.jpg", :class => :footer_logo), "https://github.com/krismacfarlane/city_mapp"%>
+</footer>
 </body>
 </html>
