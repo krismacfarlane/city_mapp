@@ -1,6 +1,13 @@
 class MarkersController < ApplicationController
 
   def index
+    @markers = Marker.all
+
+    render json: @markers
+  end
+
+  def show
+    render json: @marker
   end
 
   def create

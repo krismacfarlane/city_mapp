@@ -76,8 +76,9 @@ $(document).ready(function() {
         $('#popup').addClass('hidden');
         debugger
         $.ajax({
-          type: "POST",
-          url: "/cities/1/maps/" + mapId + "/markers",
+          type: "post",
+          url: "/cities/1/maps/" + mapId + "/markers.json",
+          dataType: "json",
           data: {lat: featureGroup.getBounds(layer)._southWest.lat, long: featureGroup.getBounds(layer)._southWest.lng, popup_content: popupContent}
         });
       });
