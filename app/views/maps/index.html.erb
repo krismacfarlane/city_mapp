@@ -6,4 +6,8 @@
 <% end %>
 </ol>
 
+<% if session[:user_id] != [] %>
 <%= button_to "Create a new map", new_city_map_path, method: "get" %>
+<% end %>
+
+<%= button_to 'Logout', logout_path, method: :delete %>
