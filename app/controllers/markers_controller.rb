@@ -8,8 +8,7 @@ class MarkersController < ApplicationController
   end
 
   def create
-    binding.pry
-    @map = Map.find(params[:id])
+    @map = Map.find(params[:map_id])
     @map.markers << Marker.new(lat: params[:lat].to_f, long: params[:long].to_f, popup_content: params[:popup_content])
   end
 
