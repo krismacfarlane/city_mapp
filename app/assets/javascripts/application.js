@@ -45,7 +45,7 @@ $(document).ready(function() {
 
   L.mapbox.accessToken = 'pk.eyJ1Ijoia3Jpc21hY2ZhcmxhbmUiLCJhIjoiN3lkS25jcyJ9.6chNwLDVAAfQacy0JKvNxQ';
   var map = L.mapbox.map('map', 'examples.map-i86nkdio')
-      .setView([40.748817, -73.985428], 17);
+      .setView([40.748817, -73.985428], 13);
 
   var featureGroup = L.featureGroup().addTo(map);
 
@@ -77,8 +77,7 @@ $(document).ready(function() {
         debugger
         $.ajax({
           type: "post",
-          url: "/cities/1/maps/" + mapId + "/markers.json",
-          dataType: "json",
+          url: "/cities/1/maps/" + mapId + "/markers",
           data: {lat: featureGroup.getBounds(layer)._southWest.lat, long: featureGroup.getBounds(layer)._southWest.lng, popup_content: popupContent}
         });
       });
