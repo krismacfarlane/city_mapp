@@ -47,6 +47,33 @@ $(document).ready(function() {
   var map = L.mapbox.map('map', 'examples.map-i86nkdio')
       .setView([40.748817, -73.985428], 13);
 
+  $.ajax({
+    type: "get",
+    url: "/cities/1/maps/" + mapId + "/markers",
+    dataType: "json"
+  }).done(function(data) {
+    for (var i = 0, len = data.length; i < len; i++){
+    L.mapbox.featureLayer({
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [
+        data[i].long,
+        data[i].lat
+      ]
+    },
+    properties: {
+      description: data[i].popup_content,
+      "marker-symbol": "star",
+      "marker-size": "medium",
+      "marker-color": "#B24FB8"
+    }
+    }).addTo(map);
+  } // end of for loop
+  })
+
+
+
   var featureGroup = L.featureGroup().addTo(map);
 
   var makeSidebar = function() {
@@ -62,9 +89,7 @@ $(document).ready(function() {
 
   map.on('draw:created', function(e) {
     var type = e.layerType,
-     layer = e.layer;
-     // var lat = featureGroup.getBounds(layer)._southWest.lat;
-     // var long = featureGroup.getBounds(layer)._southWest.lng;
+    layer = e.layer;
 
     if (type === 'marker') {
       makeSidebar();
@@ -73,6 +98,7 @@ $(document).ready(function() {
         e.preventDefault();
         var popupContent = $("#popup-box").val();
         layer.bindPopup(popupContent);
+        // type.bindPopup(popupContent);
         $('#popup').addClass('hidden');
         // debugger
 
@@ -81,7 +107,6 @@ $(document).ready(function() {
         $.ajax({
           type: "post",
           url: "/cities/1/maps/" + mapId + "/markers",
-          dataType: "json",
           data: {
             lat:           marker.lat,
             long:          marker.lng,
@@ -89,17 +114,15 @@ $(document).ready(function() {
           }
         })
         .done(function(response) {
-          console.log('ajax request APPROVED!');          
+          console.log('ajax request APPROVED!');
           console.log(response);
         })
         .fail(function(jQxhr) {
           console.log('ajax request failed');
           console.log(jQxhr);
         });
-
-        ;
       });
-    }
+    };
 
    featureGroup.addLayer(layer);
    console.log(featureGroup.getBounds(layer));
