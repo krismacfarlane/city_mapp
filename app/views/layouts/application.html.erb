@@ -9,7 +9,7 @@
   <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.js'></script>
   <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.css' rel='stylesheet' />
   <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-draw/v0.2.2/leaflet.draw.css' rel='stylesheet' />
-<script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-draw/v0.2.2/leaflet.draw.js'></script>
+  <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-draw/v0.2.2/leaflet.draw.js'></script>
 </head>
 <body>
 <header>
@@ -23,6 +23,7 @@
 </div>
 </div>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_tag "window._token = '#{form_authenticity_token}'" %>
 <div id="footer_wrapper">
 <div id="footer_inner_wrapper">
 <div><%= link_to image_tag("cm_logo.jpg", :class => :footer_logo), "https://github.com/krismacfarlane/city_mapp"%>
