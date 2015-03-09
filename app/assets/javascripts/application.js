@@ -74,12 +74,30 @@ $(document).ready(function() {
         var popupContent = $("#popup-box").val();
         layer.bindPopup(popupContent);
         $('#popup').addClass('hidden');
-        debugger
+        // debugger
+
+        var marker = featureGroup.getBounds(layer)._southWest;
+
         $.ajax({
           type: "post",
           url: "/cities/1/maps/" + mapId + "/markers",
-          data: {lat: featureGroup.getBounds(layer)._southWest.lat, long: featureGroup.getBounds(layer)._southWest.lng, popup_content: popupContent}
+          dataType: "json",
+          data: {
+            lat:           marker.lat,
+            long:          marker.lng,
+            popup_content: popupContent
+          }
+        })
+        .done(function(response) {
+          console.log('ajax request APPROVED!');          
+          console.log(response);
+        })
+        .fail(function(jQxhr) {
+          console.log('ajax request failed');
+          console.log(jQxhr);
         });
+
+        ;
       });
     }
 

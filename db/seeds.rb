@@ -6,10 +6,16 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+User.new(
+  email: 'mac@farlane.com',
+  name:  'Eagle Eye',
+  password:              'geomancer',
+  password_confirmation: 'geomancer'
+).save
 
 City.create(
-  name: "New York City",
-  state: "NY",
+  name:       'New York City',
+  state:      'NY',
   population: 8406000,
-  website: "www.nyc.gov"
+  website:    'www.nyc.gov'
 )
