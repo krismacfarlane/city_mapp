@@ -53,23 +53,25 @@ $(document).ready(function() {
     dataType: "json"
   }).done(function(data) {
     for (var i = 0, len = data.length; i < len; i++){
-    L.mapbox.featureLayer({
-    type: 'Feature',
-    geometry: {
-      type: 'Point',
-      coordinates: [
-        data[i].long,
-        data[i].lat
-      ]
-    },
-    properties: {
-      description: data[i].popup_content,
-      "marker-symbol": "star",
-      "marker-size": "medium",
-      "marker-color": "#B24FB8"
-    }
-    }).addTo(map);
-  } // end of for loop
+      if(data[i].map_id == mapId) {
+        L.mapbox.featureLayer({
+          type: 'Feature',
+          geometry: {
+          type: 'Point',
+          coordinates: [
+            data[i].long,
+            data[i].lat
+          ]
+        },
+        properties: {
+          description: data[i].popup_content,
+          "marker-symbol": "star",
+          "marker-size": "medium",
+          "marker-color": "#B24FB8"
+        }
+        }).addTo(map);
+      }
+    } // end of for loop
   })
 
 
