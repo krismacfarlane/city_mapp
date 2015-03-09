@@ -2,9 +2,7 @@ class MarkersController < ApplicationController
 
   def index
     @markers = Marker.all
-  end
-
-  def show
+    render json: @markers
   end
 
   def create
