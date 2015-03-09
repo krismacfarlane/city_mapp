@@ -45,7 +45,7 @@ $(document).ready(function() {
 
   L.mapbox.accessToken = 'pk.eyJ1Ijoia3Jpc21hY2ZhcmxhbmUiLCJhIjoiN3lkS25jcyJ9.6chNwLDVAAfQacy0JKvNxQ';
   var map = L.mapbox.map('map', 'examples.map-i86nkdio')
-      .setView([40.748817, -73.985428], 17);
+      .setView([40.748817, -73.985428], 13);
 
   var featureGroup = L.featureGroup().addTo(map);
 
