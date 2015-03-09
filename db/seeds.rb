@@ -9,6 +9,13 @@
 User.new(
   email: 'mac@farlane.com',
   name:  'Eagle Eye',
-  password: 'geomancer',
+  password:              'geomancer',
   password_confirmation: 'geomancer'
 ).save
+
+City.create(
+  name:       'New York City',
+  state:      'NY',
+  population: 8406000,
+  website:    'www.nyc.gov'
+)
