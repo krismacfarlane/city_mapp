@@ -16,3 +16,11 @@ The future features can be found on the trello board below.
 **Trello**
 
 [Check out the trello board](https://trello.com/b/lhWgUHid)
+
+**Technologies Used**
+
+City Mapps used:
+  - a Rails framework
+  - [Mapbox API](https://www.mapbox.com/mapbox.js/api/v2.1.5/)
+  - [Leaflet Draw](https://github.com/Leaflet/Leaflet.draw)
+  - jQuery
