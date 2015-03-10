@@ -24,7 +24,7 @@ $(document).ready(function() {
 
   var spanToggle = function(e) {
     $(e.target).addClass("hidden");
-    $("input.input-title").removeClass("hidden");
+    $("input.input-title").removeClass("hidden").focus();
     var spanText = $(e.target).text();
     $("input.input-title").val(spanText);
   }
@@ -100,9 +100,7 @@ $(document).ready(function() {
         e.preventDefault();
         var popupContent = $("#popup-box").val();
         layer.bindPopup(popupContent);
-        // type.bindPopup(popupContent);
         $('#popup').addClass('hidden');
-        // debugger
 
         var marker = featureGroup.getBounds(layer)._southWest;
 

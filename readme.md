@@ -5,14 +5,13 @@ This is a RESTful web application that is built using Rails. The main idea behin
 **User stories**
 
 A user can:
-  - log-in using Facebook
+  - log-in (or not. It doesn't affect the app right now)
   - choose a city from a U.S. map (NYC only to start)
   - see a list of names of maps for that specified city
-  - see a list of name of maps that they've created
   - create a new map using a city basemap
-  - delete a map that they've created
-  - [publish their map to facebook -- in the far off future, probably]
-  -
+
+The future features can be found on the trello board below.
+[Check out the deployed app!](https://arcane-caverns-7208.herokuapp.com)
 
 **Trello**
 
