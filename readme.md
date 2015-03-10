@@ -11,7 +11,7 @@ A user can:
   - create a new map using a city basemap
 
 The future features can be found on the trello board below.
-[Check out the deployed app!](https://arcane-caverns-7208.herokuapp.com)
+[Check out the deployed app!](https://city-mapps.herokuapp.com)
 
 **Trello**
 
