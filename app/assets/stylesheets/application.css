@@ -103,3 +103,21 @@
   a:active {
     color: #E8CBF7;
   }
+
+  .frontbtn {
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    color: #ffffff;
+    font-size: 34px;
+    font-family: 'Economica', sans-serif;
+    background: #b8ed9f;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+  }
+
+  .frontbtn:hover {
+    background: #d94869;
+    text-decoration: none;
+  }
+

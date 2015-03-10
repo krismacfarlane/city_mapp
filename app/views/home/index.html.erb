@@ -1,6 +1,12 @@
 <h1>Welcome to City Mapps</h1>
 
-<%= button_to "Login", login_path, method: "GET" %>
+<p class="front-text">Thanks for visiting! City Mapps was created as a way to make and share maps with your friends and other curious city explorers.</p>
+<p class="front-text">Currently, City Mapps is only available in NYC, but we are looking into expanding to other cities really, really soon!</p>
+<p class="front-text">Go ahead and click on the button below to start creating a personalize map that you can come back and add to later on.</p>
 
-<%= button_to "Cities", cities_path, method: "get" %>
+<div class="front-buttons">
+<%= button_to "Cities", cities_path, method: "get", :class => :btn, :class => :frontbtn %>
 
+<p>(You don't currently have to login to make a map, but feel free to set up an account!)</p>
+<%= button_to "Login", login_path, method: "GET", :class => :btn, :class => :frontbtn %>
+</div>
