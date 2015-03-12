@@ -23,4 +23,4 @@ City Mapps used:
   - a Rails framework
   - [Mapbox API](https://www.mapbox.com/mapbox.js/api/v2.1.5/)
   - [Leaflet Draw](https://github.com/Leaflet/Leaflet.draw)
-  - jQuery
+  - JavaScript/jQuery
