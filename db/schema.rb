@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20150312021649) do
   create_table "circles", force: :cascade do |t|
     t.float    "lat",        null: false
     t.float    "long",       null: false
-    t.string   "radius"
+    t.string   "radius",     null: false
     t.integer  "map_id"
     t.datetime "created_at"
     t.datetime "updated_at"
