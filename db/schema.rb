@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150312021649) do
+ActiveRecord::Schema.define(version: 20150312220633) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "circles", force: :cascade do |t|
+    t.float    "lat",        null: false
+    t.float    "long",       null: false
+    t.string   "radius"
+    t.integer  "map_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "cities", force: :cascade do |t|
     t.string   "name",       null: false
@@ -23,6 +32,9 @@ ActiveRecord::Schema.define(version: 20150312021649) do
     t.string   "website",    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "lines", force: :cascade do |t|
   end
 
   create_table "maps", force: :cascade do |t|
@@ -42,19 +54,13 @@ ActiveRecord::Schema.define(version: 20150312021649) do
     t.datetime "updated_at"
   end
 
+  create_table "polygons", force: :cascade do |t|
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "name",            null: false
     t.string   "email",           null: false
     t.string   "password_digest"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "circles", force: :cascade do |t|
-    t.float    "lat",        null: false
-    t.float    "long",       null: false
-    t.string   "radius",     null: false
-    t.integer  "map_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
